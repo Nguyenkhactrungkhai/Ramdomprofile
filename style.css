@@ -1,0 +1,128 @@
+/* Đặt lại một số phong cách mặc định và thêm box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Container chung để căn giữa nội dung */
+.container {
+    max-width: 1000px; /* Tăng chiều rộng nếu cần */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+/* Phong cách cho form nhập liệu */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type='text'],
+.form-group input[type='number'],
+.form-group select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Phong cách cho nút */
+button {
+    font-size: 16px; /* hoặc kích thước lớn hơn */
+    padding: 10px 20px; /* điều chỉnh padding để làm to nút */
+    margin: auto;
+    display: block;
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Bố trí nút "Xuất ra Excel" ở góc trên cùng bên phải của bảng */
+.excel-button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Phong cách cho bảng */
+.table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .form-group input[type='text'],
+    .form-group input[type='number'],
+    .form-group select {
+        width: calc(100% - 20px);
+    }
+
+    .excel-button {
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+}

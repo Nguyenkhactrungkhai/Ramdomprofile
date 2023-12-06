@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Danh Sách Ngẫu Nhiên</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Thêm thư viện SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Tạo Danh Sách Ngẫu Nhiên</h2>
+        <form id="randomProfileForm">
+            <div class="form-group">
+                <label>Giới tính:</label>
+                <select id="gender" required>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                    <option value="">Tất cả</option>
+                </select>                
+            </div>
+            <div class="form-group">
+                <label>Năm sinh từ:</label>
+                <input type="number" id="birthYearFrom" min="1920" max="2100" value="1990" required>
+                <label>đến:</label>
+                <input type="number" id="birthYearTo" min="1920" max="2100" value="2000" required>
+            </div>
+            <div class="form-group">
+                <label>Số lượng:</label>
+                <input type="number" id="quantity" min="1" max="300" value="1" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Tạo Ngẫu Nhiên</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table id="profileTable">
+            <thead>
+                <tr>
+                    <th>STT</th> <!-- Thêm cột STT -->
+                    <th>Họ và tên</th>
+                    <th>Ngày tháng năm sinh</th>
+                    <th>Giới tính</th>
+                    <th>Quê quán</th>
+                    <th>Sống tại</th>
+                    <th>Đã học</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu bảng sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+    </div>
+    <button id="exportExcel" class="excel-button">Xuất ra Excel</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
