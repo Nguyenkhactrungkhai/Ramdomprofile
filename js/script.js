@@ -20,12 +20,14 @@ function getRandomUniversity(city, universities, colleges) {
     return universityList[Math.floor(Math.random() * universityList.length)];
 }
 
+
+
 // Dữ liệu mẫu cho tên nam và nữ
 const maleNames = {
     first: ['Nguyễn', 'Trung', 'Quang', 'Hoàng', 'Minh', 'Đức', 'Anh', 'Hùng', 'Hải', 'Tiến', 'Khánh', 'Tuấn', 'Thành', 'Nam', 'Phúc', 'Văn', 
     'Thắng', 'Dương', 'Bình', 'Long', 'Hưng', 'Cường', 'Hà', 'Việt', 'Quốc', 'Đạt', 'Tùng', 'Hòa', 'Trường', 'Phương', 'Tâm', 'Tú', 'Duy', 'Đại', 
     'Xuân', 'Đinh', 'Vinh', 'Hạnh', 'Lê', 'Sơn', 'Thái', 'Quyết', 'Chí', 'Đinh', 'Hiếu', 'Hoài', 'Nhật', 'Lương', 'Viên', 'Quân'],
-    middle: ['Văn', 'Đình', 'Quang', 'Khắc','Hữu'],
+    middle: ['Văn', 'Đình', 'Quang', 'Khắc','Hữu','Quốc','Công','Xuân'],
     last: ['Nguyễn', 'Trần', 'Lê', 'Phạm','Hoàng', 'Huỳnh','Vũ','Võ','Phan','Trương','Bùi','Đặng','Đỗ','Ngô','Hồ','Dương','Đình','Lý']
 };
 
@@ -35,12 +37,12 @@ const femaleNames = {
         'Tuyết', 'Thanh', 'Vân', 'Bích', 'Thúy', 'Nguyệt', 'Tâm', 'Hà', 'Xuân', 'Ngân', 'Kim', 'Đào', 'Loan', 'Hồng', 'Ngọc', 'Dung', 'Ly', 'Huệ', 'Thủy', 
         'Hằng', 'Bảo', 'Huyền', 'Cẩm', 'Ái', 'Nguyên', 'Thư', 'Hoài', 'Hòa', 'Ngọc', 'Anh', 'Việt', 'Đức'
     ],
-    middle: ['Thị', 'Kim', 'Hồng','Thùy'],
+    middle: ['Thị', 'Kim', 'Hồng','Thùy', 'Thúy','Khánh','Thu','Hồng'],
     last: ['Nguyễn', 'Trần', 'Lê', 'Phạm','Hoàng', 'Huỳnh','Vũ','Võ','Phan','Trương','Bùi','Đặng','Đỗ','Ngô','Hồ','Dương','Đình','Lý']
 };
 
 // Dữ liệu mẫu cho các thành phố và trường đại học, cao đẳng
-const cities = ['Hà Nội', 'TP HCM','Đà Nẵng'];
+const cities = ['Hà Nội', 'TP HCM','Đà Nẵng', 'Đà Lạt'];
 const provinces = [
     "Hà Nội", "Hồ Chí Minh (Sài Gòn)", "Hải Phòng", "Cần Thơ", "Đà Nẵng", "Quy Nhơn", "Nha Trang", "Vũng Tàu", "Hạ Long", "Đồng Hới",
     "Thanh Hóa", "Vinh", "Huế", "Đà Lạt", "Buôn Ma Thuột", "Pleiku", "Kon Tum", "Quảng Ngãi", "Tam Kỳ", "Quảng Nam",
@@ -78,8 +80,9 @@ const universities = {
     'Đại học Y Dược Đà Nẵng', 'Đại học Nông Lâm Đà Nẵng', 'Đại học Công nghiệp Đà Nẵng', 'Đại học Quản lý Đà Nẵng', 'Đại học Đông Á Đà Nẵng', 'Đại học Ngoại thương Đà Nẵng',
     'Đại học Sư phạm Thể dục Thể thao Đà Nẵng', 'Đại học Công nghiệp May Đà Nẵng', 'Đại học Duy Tân Đà Nẵng', 'Đại học Luật - Quốc tế Đà Nẵng', 'Đại học Đại Nam Đà Nẵng',
     'Đại học Trường BĐ - ĐT Bà Rịa - Vũng Tàu Đà Nẵng', 'Đại học Công nghiệp Xây dựng Đà Nẵng', 'Đại học Kỹ thuật Đà Nẵng', 'Đại học Nghệ thuật - Điện ảnh Đà Nẵng',
-    'Đại học Y Học Cổ Truyền Đà Nẵng', 'Đại học Ngoại thương - Cơ sở Đà Nẵng', 'Đại học Bưu chính Viễn thông - Cơ sở Đà Nẵng', 'Đại học Sư phạm Mỹ thuật Đà Nẵng'
-    ]
+    'Đại học Y Học Cổ Truyền Đà Nẵng', 'Đại học Ngoại thương - Cơ sở Đà Nẵng', 'Đại học Bưu chính Viễn thông - Cơ sở Đà Nẵng', 'Đại học Sư phạm Mỹ thuật Đà Nẵng'], 
+
+    'Đà Lạt': ['Đại học Đà Lạt','Học viện Nông nghiệp và Phát triển Nông thôn Đà Lạt', 'Học viện Mỹ thuật Đà Lạt', 'Học viện Nghiên cứu và Phát triển Đà Lạt']
 };
 
 const colleges = {
@@ -97,7 +100,10 @@ const colleges = {
     'Đà Nẵng': ['Cao đẳng Kỹ thuật Đà Nẵng', 'Cao đẳng Nghề Đà Nẵng', 'Cao đẳng Công nghệ và Kỹ thuật Đà Nẵng', 'Cao đẳng Công nghiệp Đà Nẵng', 'Cao đẳng Công nghệ thông tin Đà Nẵng', 
     'Cao đẳng Kinh tế - Quản trị Đà Nẵng', 'Cao đẳng Sư phạm và Nghệ thuật Đà Nẵng', 'Cao đẳng Kinh tế - Du lịch Đà Nẵng', 'Cao đẳng Nông nghiệp và Phát triển nông thôn Đà Nẵng', 
     'Cao đẳng Công nghệ Đà Nẵng', 'Cao đẳng Y tế Đà Nẵng', 'Cao đẳng Môi trường Đà Nẵng', 'Cao đẳng Thể dục Thể thao Đà Nẵng', 'Cao đẳng Sư phạm Tiểu học Đà Nẵng', 
-    'Cao đẳng Ngoại ngữ Đà Nẵng']
+    'Cao đẳng Ngoại ngữ Đà Nẵng'],
+
+    'Đà Lạc': ['Trường Cao đẳng Sư phạm Đà Lạt','Trường Cao đẳng Y Dược Đà Lạt', 'Trường Cao đẳng Kinh tế và Quản trị kinh doanh Đà Lạt', 
+    'Trường Cao đẳng Du lịch và Khách sạn Đà Lạt']
 };
 
 
@@ -145,7 +151,7 @@ function displayProfiles(profiles) {
             row.insertCell(6).innerHTML = profile.university;
             setTimeout(() => addProfileToTable(index + 1), 300); // Đợi 500ms trước khi thêm hồ sơ tiếp theo
         } else {
-            alert('Tạo danh sách thành công!'); // Thông báo khi hoàn tất
+            alert('Tạo danh sách thành công!'); // Thông báo khi hoàn tất 
         }
     }
 
@@ -160,6 +166,15 @@ function exportToExcel() {
     alert('Xuất file Excel thành công!');
 }
 
+function saveProfilesToLocalStorage(profiles) {
+    localStorage.setItem('profiles', JSON.stringify(profiles));
+}
+
+function loadProfilesFromLocalStorage() {
+    const savedProfiles = localStorage.getItem('profiles');
+    return savedProfiles ? JSON.parse(savedProfiles) : [];
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('randomProfileForm');
     form.addEventListener('submit', function (e) {
@@ -172,7 +187,24 @@ document.addEventListener('DOMContentLoaded', function () {
             profiles.push(generateRandomProfile(birthYearFrom, birthYearTo));
         }
         displayProfiles(profiles);
+        saveProfilesToLocalStorage(profiles);
     });
 
     document.getElementById('exportExcel').addEventListener('click', exportToExcel);
+    document.getElementById('deleteBtn').addEventListener('click', deleteData);
+
+    const savedProfiles = loadProfilesFromLocalStorage();
+    if (savedProfiles.length > 0) {
+        displayProfiles(savedProfiles);
+    }
 });
+
+
+function deleteData() {
+    // Clear table
+    const tableBody = document.getElementById('profileTable').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = "";
+
+    // Clear local storage
+    localStorage.removeItem('profiles');
+}
